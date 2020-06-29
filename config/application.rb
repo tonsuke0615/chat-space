@@ -7,7 +7,7 @@ require 'rails/all'
 Bundler.require(*Rails.groups)
 
 module ChatSpace
-  class Application < Rails::Application
+  class Application < Rails::Applicatio
     config.load_defaults 6.0
     config.generators do |g|
       g.stylesheets false
