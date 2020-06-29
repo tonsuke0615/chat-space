@@ -1,0 +1,34 @@
+.main-chat
+  .chat
+    .chat__header
+      .chat__header__test
+        test
+        .chat__header__member
+          Member: ton
+      .chat__header__edit
+        %a{:href => "#"}Edit
+
+  .chat__center
+    .chat__name
+      ton
+      .chat__date
+        2020/6/29(sun)15:03
+    .chat__message
+      プログラミング楽しいけど難しい
+
+    .chat__name
+      dai
+      .chat__date
+        2020/6/29(sun)17:23
+    .chat__message
+      できると楽しいね！    
+
+
+  .form
+    %form.new_message
+      .input-box
+        %input{type: "text", class:"input-box__text", placeholder: "type a message"}
+        %label{class: "input-box__image"}
+          = icon('far', 'image')
+          %input{type: "file", class: "input-box__image__file"}
+      %input{type: "submit", class:"submit-btn", value: "send"}
