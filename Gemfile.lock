@@ -226,10 +226,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
-<<<<<<< Updated upstream
   font-awesome-sass
-=======
->>>>>>> Stashed changes
   haml-rails (>= 1.0, <= 2.0.1)
   jbuilder (~> 2.7)
   listen (>= 3.0.5, < 3.2)
