@@ -1,0 +1,19 @@
+.side-bar
+  .header
+    .header__box
+      %p.header__box__user-name
+        saisu
+      %ul.header__box__icons
+        %li.header__box__edit
+          = link_to "#" do
+            = icon('far', 'edit')
+        %li.header__box__cog
+          = link_to "#" do
+            = icon('fas', 'cog')
+
+  .group
+    %ul.group__box
+      %li.group__box__name 
+        ton
+      %li.group__box__message
+        まだメッセージはありません
