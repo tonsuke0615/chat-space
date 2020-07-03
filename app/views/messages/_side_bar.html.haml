@@ -2,13 +2,13 @@
   .header
     .header__box
       %p.header__box__user-name
-        saisu
+        = current_user.name
       %ul.header__box__icons
         %li.header__box__edit
           = link_to "#" do
             = icon('far', 'edit')
         %li.header__box__cog
-          = link_to "#" do
+          = link_to edit_user_path(current_user) do
             = icon('fas', 'cog')
 
   .group
