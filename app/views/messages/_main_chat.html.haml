@@ -2,33 +2,23 @@
   .chat
     .chat__header
       .chat__header__test
-        test
+        = @group.name
         .chat__header__member
-          Member: ton
-      .chat__header__edit
-        %a{:href => "#"}Edit
+          Member: 
+          - @group.group_users.each do |group_users|
+            = group_users.user.name
 
-  .chat__center
-    .chat__name
-      ton
-      .chat__date
-        2020/6/29(sun)15:03
-    .chat__message
-      プログラミング楽しいけど難しい
+      =link_to edit_group_path(@group) ,class:"chat__header__edit" do
+        Edit
 
-    .chat__name
-      dai
-      .chat__date
-        2020/6/29(sun)17:23
-    .chat__message
-      できると楽しいね！    
-
+  .messages
+    = render @messages
 
   .form
-    %form.new_message
+    = form_with model: [@group, @message], html: {class: "new_message"}, local: true do |f|
       .input-box
-        %input{type: "text", class:"input-box__text", placeholder: "type a message"}
-        %label{class: "input-box__image"}
+        = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
+        = f.label :image, class: 'input-box__image' do
           = icon('far', 'image')
-          %input{type: "file", class: "input-box__image__file"}
-      %input{type: "submit", class:"submit-btn", value: "send"}
+          =f.file_field :image, class: 'input-box__image__file'
+      = f.submit 'Send', class: 'submit-btn'
