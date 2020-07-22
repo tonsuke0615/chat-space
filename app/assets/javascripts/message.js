@@ -43,7 +43,6 @@ $(function(){
   $('.new_message').on('submit', function(e){
     e.preventDefault();
     let formData = new FormData(this);
-    console.log(this.value);
     let url = $(this).attr('action');
     $.ajax({
       url: url,
@@ -54,7 +53,6 @@ $(function(){
       contentType: false
     })
     .done(function(data){
-      console.log(data);
       let html = buildHTML(data);
       $('.chat__center').append(html);
       $('.chat__center').animate({ scrollTop: $('.chat__center')[0].scrollHeight});
